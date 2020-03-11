@@ -7008,7 +7008,8 @@ public class TipoAreaComunServiceImp implements TipoAreaComunService {
         } catch (Exception e) {
             e.printStackTrace();
             response.setCode(1L);
-            response.setReason("ERROR");
+            response.setReason(e.toString());
+            
             try {
                 transaction.rollback();
             } catch (Exception ee) {

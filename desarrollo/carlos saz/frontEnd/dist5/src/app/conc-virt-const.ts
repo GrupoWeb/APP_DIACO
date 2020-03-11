@@ -4,12 +4,12 @@ export const BASE_URL_REST_FILE='http://gestorquejas.diaco.gob.gt/file-web-queja
 export const BASE_URL_FILE='http://gestorquejas.diaco.gob.gt/file-web-quejaini/rs/';
 */
 
-export const BASE_SERVER   = 'http://gestorquejas.diaco.gob.gt/';
-export const BASE_URL_REST = BASE_SERVER+'file-web-quejaini/rs/';
-export const BASE_URL_FILE = BASE_SERVER+'file-web-quejaini/rs/';
-export const BASE_URL_REST_FILE=BASE_URL_FILE;
+export const BASE_SERVER   = 'http://desagestorquejas.diaco.gob.gt/';
+export const BASE_URL_REST = BASE_SERVER + 'web-quejaini/rs/';
+export const BASE_URL_FILE = BASE_SERVER + 'web-quejaini/rs/';
+export const BASE_URL_REST_FILE = BASE_URL_FILE;
 
-export const BASE_DIST_6 = BASE_SERVER + 'dist6/#/pquejaini/presencial/eyjhbgcioijiuzi1nij9.eyjzdwiioijjy2fybg9ziiwicm9szxmioijob3jtywwstm9ybwfsle5vcm1hbcxob3jtywwilcjuyw1lijoiy2nhcmxvcyisimv4cci6mtu3ndgxmji4mswidxnlcm5hbwuioijjy2fybg9zin0.dcvx3gvghft8y9m7l0rbsqlnuxd2s9umqzhioiqgep0';
+export const BASE_DIST_6 = BASE_SERVER + 'quejas_ini_6/#/pquejaini/presencial/eyjhbgcioijiuzi1nij9.eyjzdwiioijjy2fybg9ziiwicm9szxmioijob3jtywwstm9ybwfsle5vcm1hbcxob3jtywwilcjuyw1lijoiy2nhcmxvcyisimv4cci6mtu3ndgxmji4mswidxnlcm5hbwuioijjy2fybg9zin0.dcvx3gvghft8y9m7l0rbsqlnuxd2s9umqzhioiqgep0';
 
 /*
 export const BASE_URL_REST='http://localhost:8080/BackEnd/rs/';

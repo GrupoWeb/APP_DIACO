@@ -40,7 +40,7 @@
 			  
 				<div class="form-group row">
 				
-				<label for="et1" >(-)</label>
+				<label for="et1" [ngStyle]="{color: 'red'}">(*)</label>
 				<label for="dpiPasaporte" class="col-lg-2 col-form-label" >DPI o pasaporte</label>
           <div class="col-lg-3">
             <input
@@ -229,7 +229,7 @@
 					  
 				  </div>
 				  
-				  <div class="col-lg-1">
+				  <div class="col-lg-1 ml-3">
 					  <button type="button" class="btn btn-primary row button" (click)="onProveedorChanged()">Buscar</button>
 				  </div>
 				  

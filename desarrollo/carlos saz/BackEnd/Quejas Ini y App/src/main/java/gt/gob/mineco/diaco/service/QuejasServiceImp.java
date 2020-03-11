@@ -494,7 +494,7 @@ public class QuejasServiceImp {
                 body5 = "Para poder continuar con el trámite de su queja necesitamos que complete la " + salto
                         + "información del siguiente link, así como que adjunte copia de la factura o" + salto
                         + " documento de respaldo de la compra y su DPI: "
-                        + "<a href='http://" + server + "/dist6/#/consumidor/presencial/" + link + "/" + queja.getIdQueja() + "'>Click aqui </a>" + salto + salto
+                        + "<a href='http://" + server + "/quejas_ini_6/#/consumidor/presencial/" + link + "/" + queja.getIdQueja() + "'>Click aqui </a>" + salto + salto
                         + "Por favor, tome en cuenta que tiene 48 horas después de recibido este correo, " + salto
                         + "para ingresar la información y subir sus los documentos." + salto + salto;
                 body = body1 + body5 + body2; //notificación de ingreso de queja web//notificación de ingreso de queja web 
@@ -512,7 +512,7 @@ public class QuejasServiceImp {
                 body3 = "Para poder continuar con el trámite de su queja necesitamos que rectifique" + salto
                         + " la información del siguiente link, así como que adjunte copia de la factura " + salto
                         + " o documento de respaldo de la compra y su DPI: "
-                        + "<a href='http://" + server + "/dist5/#/quejacon/0/" + link + "'>Click aqui </a>" + salto + salto
+                        + "<a href='http://" + server + "/quejas_ini_5/#/quejacon/0/" + link + "'>Click aqui </a>" + salto + salto
                         + "Por favor, tome en cuenta que tiene 48 horas después de recibido este correo, " + salto
                         + "para verificar la información y subir los documentos.";
                 body = body1 + body3 + body2 + salto + salto + salto; //notificación de ingreso de que archivos

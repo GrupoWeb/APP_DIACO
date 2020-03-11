@@ -4,14 +4,15 @@ export const BASE_SERVER   = 'http://desagestorquejas.diaco.gob.gt/';
 
 //para servicios de dist
 // export const BASE_URL_REST=      BASE_SERVER + 'diaco-int-web/rs/'; 
-export const BASE_URL_REST=      BASE_SERVER + 'quejas_dev/rs/'; 
-export const BASE_URL_FILE=      BASE_URL_REST
-export const BASE_URL_REST_FILE= BASE_URL_REST
+export const BASE_URL_REST =      BASE_SERVER + 'quejas_dev/rs/';
+export const BASE_URL_FILE =      BASE_URL_REST
+export const BASE_URL_REST_FILE = BASE_URL_REST
 
 //para servicios de dist6
 // export const BASE_URL_REST_FILE2=BASE_SERVER +  'file-web-quejaini/rs/';
-export const BASE_URL_REST_FILE2=BASE_SERVER +  'web-quejaini/rs/';
-export const BASE_URL_REST_EXTER=BASE_URL_REST
+export const BASE_URL_REST_FILE2 = BASE_SERVER +  'web-quejaini/rs/';
+export const BASE_URL_REST_EXTER = BASE_URL_REST;
+export const BASE_URL_DYNAMIC_ASSIGNMENT = BASE_SERVER + 'quejas_dev/rs/tipos-confaccion/asignaAtCon/';
 
 
 
