@@ -52,7 +52,7 @@ export class MaterialModule { }
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
 //    MainConcVirtualComponent,
 //    TableConcVirtualComponent,
 //    DetalleConcVirtComponent,
@@ -63,7 +63,10 @@ export class MaterialModule { }
 //    ConsumidorComponent,
 //    ProveedorComponent,
 //    QuejaComponent,
-    ,QuejainiComponent, QuejaextComponent, QuejaconComponent, MyAlertDialogComponent,  BuscaprovComponent
+      QuejainiComponent,
+      QuejaextComponent,
+      QuejaconComponent,
+      MyAlertDialogComponent,  BuscaprovComponent
 	//, QuejaiuComponent
 	//, LoadingScreenComponent
 	//,QuejainiComponentCon
