@@ -1,0 +1,20 @@
+USE [DIACO]
+GO
+
+/****** Object:  Table [dbo].[diaco_flujo]    Script Date: 08/03/2019 06:43:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[diaco_flujo](
+	[id] [int] NOT NULL,
+	[flujo] [varchar](100) NULL,
+ CONSTRAINT [PK_diaco_flujo] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
