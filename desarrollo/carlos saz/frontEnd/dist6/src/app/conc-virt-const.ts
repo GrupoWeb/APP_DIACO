@@ -1,6 +1,6 @@
 
 // export const BASE_SERVER   = 'http://gestorquejas.diaco.gob.gt/';
-export const BASE_SERVER   = 'http://desagestorquejas.diaco.gob.gt/';
+export const BASE_SERVER   = 'http://gestorquejas.diaco.gob.gt/';
 
 //para servicios de dist
 // export const BASE_URL_REST=      BASE_SERVER + 'diaco-int-web/rs/'; 
