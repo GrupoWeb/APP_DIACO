@@ -2069,6 +2069,11 @@ public TipoVisitaCampo findVisitaVigByIdQueja(Integer id_queja) {
                 List<TipoUsuarioPerfil> DataList = em.createNamedQuery("TipoUsuarioPerfil.find_atcon_Presencial").setParameter("idUsuario", id_usuario).setMaxResults(1).getResultList();
                 return DataList.isEmpty() ? null : DataList.get(0);
 	}
+        public TipoUsuarioPerfil findUsuarioPerfil_atcon_call_center(Integer id_usuario){
+                this.em.getEntityManagerFactory().getCache().evict(TipoUsuarioPerfil.class);
+                List<TipoUsuarioPerfil> DataList = em.createNamedQuery("TipoUsuarioPerfil.find_atcon_call_center").setParameter("idUsuario", id_usuario).setMaxResults(1).getResultList();
+                return DataList.isEmpty() ? null : DataList.get(0);
+	}
         //perfiles puesto
         public TipoPerfilesPuesto findByIdPerfilesPuesto(Integer id) {
                this.em.getEntityManagerFactory().getCache().evict(TipoPerfilesPuesto.class);

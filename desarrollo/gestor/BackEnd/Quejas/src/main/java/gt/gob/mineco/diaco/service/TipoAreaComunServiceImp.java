@@ -8498,6 +8498,33 @@ public class TipoAreaComunServiceImp implements TipoAreaComunService {
                     }
                 }
             }
+            
+            // Permiso para Perfil Call Center
+            if(formConfUsuario.getAtcon_call_center() != 0){
+                vperfil = null;
+                if (formConfUsuario.getId_usuario() != 0) {
+                    vperfil = tipoDao.findUsuarioPerfil_atcon_call_center(formConfUsuario.getId_usuario());
+                }
+                if (vperfil == null) {
+                    vperfil = new TipoUsuarioPerfil();
+                    vperfil.setFechaAdicion(new Date());
+                    vperfil.setUsuarioAdicion(formConfUsuario.getUsuario_operacion().toString());
+                    TipoUsuarioPerfilPK perfilpk = new TipoUsuarioPerfilPK();
+                    perfilpk.setIdPerfilPuesto(Constants.REG_DIACO_PERFIL_USUARIO_ATCON_CALL_CENTER);
+                    perfilpk.setIdUsuario(usuarioSrch.getId_usuario());
+                    vperfil.setTipoUsuarioPerfilPK(perfilpk);
+                    vperfil.setUsuarioAdicion(formConfUsuario.getUsuario_operacion().toString());
+                    tipoDao.saveUsuarioPerfil(vperfil);
+                }
+            }
+            else {//borrar permiso
+                if (formConfUsuario.getId_usuario() != 0) {
+                    vperfil = tipoDao.findUsuarioPerfil_atcon_call_center(formConfUsuario.getId_usuario());
+                    if (vperfil != null) {
+                        tipoDao.deleteUsuarioPerfil(vperfil);
+                    }
+                }
+            }
 
             //guarda permisos juridico, rol
             if (formConfUsuario.getJur_rol() != 0) { //agregar permiso
@@ -8809,7 +8836,7 @@ public class TipoAreaComunServiceImp implements TipoAreaComunService {
         } catch (Exception e) {
             e.printStackTrace();
             response.setCode(1L);
-            response.setReason("ERROR");
+            response.setReason(e.toString());
             try {
                 transaction.rollback();
             } catch (Exception ee) {
@@ -9016,6 +9043,13 @@ public class TipoAreaComunServiceImp implements TipoAreaComunService {
             } else {
                 temp.addProperty("atcon_presencial", 0);
             }
+            vuser = tipoDao.findUsuarioPerfil_atcon_call_center(idusuario);
+            if (vuser != null) {
+                temp.addProperty("atencion_call", 1);
+            } else {
+                temp.addProperty("atencion_call", 0);
+            }
+            
             /*vuser=tipoDao.findUsuarioPerfil_atcon_conf(idusuario);
                     if(vuser!=null){
                         temp.addProperty("atcon_conf",1);

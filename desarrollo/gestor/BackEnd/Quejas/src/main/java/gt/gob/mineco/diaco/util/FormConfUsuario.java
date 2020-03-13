@@ -25,6 +25,7 @@ public class FormConfUsuario implements Serializable {
         private Integer atcon_confsistema;
         private Integer atcon_admcolas;
         private Integer atcon_presencial;
+        private Integer atcon_call_center;
         private Integer jur_rol;
         private Integer jur_confsistema;
         private Integer jur_admcolas;
@@ -42,6 +43,15 @@ public class FormConfUsuario implements Serializable {
         
         public FormConfUsuario() {
         }
+        
+    public Integer getAtcon_call_center() {
+        return atcon_call_center;
+    }
+
+
+    public void setAtcon_call_center(Integer atcon_call_center) {
+        this.atcon_call_center = atcon_call_center;
+    }
 
     public Integer getAtcon_presencial() {
         return atcon_presencial;
@@ -322,5 +332,6 @@ public class FormConfUsuario implements Serializable {
     public void setSp_admcolas(Integer sp_admcolas) {
         this.sp_admcolas = sp_admcolas;
     }
+
 
 }

@@ -52,6 +52,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "TipoUsuarioPerfil.find_general_Catalogos", query = "SELECT d FROM TipoUsuarioPerfil d WHERE d.diacoUsuarioPerfilPK.idUsuario = :idUsuario and d.diacoUsuarioPerfilPK.idPerfilPuesto = 27")
     , @NamedQuery(name = "TipoUsuarioPerfil.find_pp_rol", query = "SELECT d FROM TipoUsuarioPerfil d WHERE d.diacoUsuarioPerfilPK.idUsuario = :idUsuario and d.diacoUsuarioPerfilPK.idPerfilPuesto in (4,5)")        
     , @NamedQuery(name = "TipoUsuarioPerfil.find_atcon_Presencial", query = "SELECT d FROM TipoUsuarioPerfil d WHERE d.diacoUsuarioPerfilPK.idUsuario = :idUsuario and d.diacoUsuarioPerfilPK.idPerfilPuesto = 28")
+    , @NamedQuery(name = "TipoUsuarioPerfil.find_atcon_call_center", query = "SELECT d FROM TipoUsuarioPerfil d WHERE d.diacoUsuarioPerfilPK.idUsuario = :idUsuario and d.diacoUsuarioPerfilPK.idPerfilPuesto = 30")
 })
 public class TipoUsuarioPerfil implements Serializable {
 

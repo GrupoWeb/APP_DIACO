@@ -35,7 +35,8 @@ export class UsuarioDetalleComponent implements OnInit {
 	//@ViewChild('chkbox_atcon_confsist') EL_atcon_confsist:ElementRef;
 	@ViewChild('chkbox_atcon_admcolas') EL_atcon_admcolas:ElementRef;
 	@ViewChild('chkbox_atcon_presencial') EL_atcon_presencial:ElementRef;
-	@ViewChild('chkbox_atcon_call_center') EL_atcon_call_center:ElementRef;
+  @ViewChild('chkbox_atencion_call') El_atencion_call:ElementRef;
+	// @ViewChild('chkbox_atcon_call_center') EL_atcon_call_center:ElementRef;
 	//@ViewChild('chkbox_jur_confsist') EL_jur_confsist:ElementRef;
 	@ViewChild('chkbox_jur_admcolas') EL_jur_admcolas:ElementRef;
 	//@ViewChild('chkbox_vyv_confsist') EL_vyv_confsist:ElementRef;
@@ -73,8 +74,8 @@ export class UsuarioDetalleComponent implements OnInit {
 	rolSPCtrl: FormControl;
 	flagformvisible; list_conf; ListUsuariosCount;
 	idUsuario;lbl_newuser;
-  
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialogRef: MatDialogRef<UsuarioDetalleComponent>, private _usuarioService: UsuarioService, private _submitFormService: SubmitFormService, private _catalogoService: CatalogoService, private _sedeservice:SedeService, private _configuracionService:ConfiguracionService) { 
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialogRef: MatDialogRef<UsuarioDetalleComponent>, private _usuarioService: UsuarioService, private _submitFormService: SubmitFormService, private _catalogoService: CatalogoService, private _sedeservice:SedeService, private _configuracionService:ConfiguracionService) {
 	this.flagInfoError=false;
 	this.loaderror=false;
 	this.tabledata=false;
@@ -105,7 +106,7 @@ export class UsuarioDetalleComponent implements OnInit {
 	  this.rolJurCtrl =  new FormControl('',Validators.required);
 	  this.rolVyVCtrl =  new FormControl('',Validators.required);
 	  this.rolSPCtrl =  new FormControl('',Validators.required);
-	  
+
 	  this.myForm = new FormGroup({
 		nit: this.nitCtrl,
 		usuario: this.usuarioCtrl,
@@ -167,7 +168,7 @@ export class UsuarioDetalleComponent implements OnInit {
 			this.flagInfoError=true;
 			this.SetSecTimerInfoError();
 		});
-	}	
+	}
 
   LoadDefaults(){
 	  this.puestoCtrl.setValue('5');
@@ -187,7 +188,7 @@ export class UsuarioDetalleComponent implements OnInit {
   BackDialog(){
 		this.flagMainUpdate=true;
 		this.ngOnDestroy();
-  }	  
+  }
 
  onSubmit(){}
 
@@ -233,7 +234,7 @@ export class UsuarioDetalleComponent implements OnInit {
 					console.log('Rest service response ERROR.');
 					this.flagInfoError=true;
 					this.SetSecTimerInfoError();
-				}		
+				}
 			},(error)=>{
 				console.log(error);
 				this.flagInfoError=true;
@@ -241,7 +242,7 @@ export class UsuarioDetalleComponent implements OnInit {
 			});
 		}
   }
-  
+
 	LoadInfo(FrmLocal){
 		this.nitCtrl.setValue(FrmLocal[0]['nit']);
 		this.usuarioCtrl.setValue(FrmLocal[0]['login']);
@@ -270,8 +271,8 @@ export class UsuarioDetalleComponent implements OnInit {
 			this.SetSecTimerChk_atcon_admcolas();
 		if(FrmLocal[0]['atcon_presencial']==1)
 			this.SetSecTimerChk_atcon_presencial();
-		if(FrmLocal[0]['atcon_call_center']==1)
-			this.SetSecTimerChk_atcon_call_center();
+		if(FrmLocal[0]['atencion_call']==1)
+			this.SetSecTimerChk_atencion_call();
 		//if(FrmLocal[0]['jur_conf']==1)
 		//	this.SetSecTimerChk_jur_confsist();
 		if(FrmLocal[0]['jur_colas']==1)
@@ -286,7 +287,7 @@ export class UsuarioDetalleComponent implements OnInit {
 			this.SetSecTimerChk_sp_admcolas();
 		if(FrmLocal[0]['general_Configuracion']==1)
 			this.SetSecTimerChk_global_confsist();
-		
+
 	}
 
 	SetSecTimerChk_global_paramgen(){
@@ -321,9 +322,10 @@ export class UsuarioDetalleComponent implements OnInit {
 		const source = timer(500);
 		const subscribe = source.subscribe(val => this.EL_atcon_presencial.nativeElement.checked=true);
 	}
-	SetSecTimerChk_atcon_call_center(){
+
+	SetSecTimerChk_atencion_call(){
 		const source = timer(500);
-		const subscribe = source.subscribe(val => this.EL_atcon_call_center.nativeElement.checked=true);
+		const subscribe = source.subscribe(val => this.El_atencion_call.nativeElement.checked=true);
 	}
 	/*SetSecTimerChk_jur_confsist(){
 		const source = timer(500);
@@ -383,11 +385,11 @@ export class UsuarioDetalleComponent implements OnInit {
 	}
 	TimerForm(){
 		if(this.flagformvisible<2){
-			this.loaderror=true;	
+			this.loaderror=true;
 			this.flagformvisible=-1;
 		}
 	}
-	
+
 	txtTrim(pos){
 		switch(pos){
 			case 1:
@@ -413,11 +415,11 @@ export class UsuarioDetalleComponent implements OnInit {
 			case 7:
 				let vartelefono=this.telefonoCtrl.value;
 				this.telefonoCtrl.setValue(vartelefono.substring(0, 29));
-				break;			
+				break;
 		}
 		this.FormUpdate();
 	}
-	
+
 	closeDialog() {
 		this.dialogRef.close();
 	}
@@ -468,23 +470,22 @@ export class UsuarioDetalleComponent implements OnInit {
 		}
 		let valor_atcon_presencial;
 		if(this.EL_atcon_presencial.nativeElement.checked){
-			
+
 			valor_atcon_presencial=1;
 		}else{
 			valor_atcon_presencial=0;
 		}
-		
+
 		// queja call center
 
 		let valor_atcon_call_center;
-		if(this.EL_atcon_call_center.nativeElement.checked){
-			
+		if(this.El_atencion_call.nativeElement.checked){
 			valor_atcon_call_center=1;
 		}else{
 			valor_atcon_call_center=0;
 		}
 		/********************** */
-		
+
 		/*let valor_jur_confsist;
 		if(this.EL_jur_confsist.nativeElement.checked){
 			valor_jur_confsist=1;
@@ -537,7 +538,7 @@ export class UsuarioDetalleComponent implements OnInit {
 				var tempstr=JSON.parse('['+retvalue["value"].slice(0, -1) +']');
 				// console.log(tempstr);
 				this.flagChange=false;
-				this.flagSaved=true;	
+				this.flagSaved=true;
 				this.SetTimerSaved();
 				this.flagErrorLogin=false;
 				this.flagErrorEmail=false;
@@ -562,13 +563,13 @@ export class UsuarioDetalleComponent implements OnInit {
 				this.flagInfoError=true;
 				this.SetSecTimerInfoError();
 			}
-			this.BtnVisibleAfterxsec();		
+			this.BtnVisibleAfterxsec();
 		},(error)=>{
 			console.log(error);
 			this.flagInfoError=true;
 			this.SetSecTimerInfoError();
 			this.BtnVisibleAfterxsec();
-		});  
+		});
 	}
 
 }

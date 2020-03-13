@@ -78,9 +78,9 @@
         <ngx-datatable-column name="Usuario Asignado" prop="asignado_nombre" [flexGrow]="2"></ngx-datatable-column>
         <ngx-datatable-column name="Datos Completos" prop="completo_dato" [flexGrow]="2">
           <ng-template ngx-datatable-cell-template let-value="value" let-row="row"  >
-            <ng-container *ngIf="row.completo_dato === '1'">
+            <ng-container *ngIf="row.completo_datos === 'Datos Completos'">
               Datos Completos
-            </ng-container><ng-container *ngIf="row.completo_dato === ''">
+            </ng-container><ng-container *ngIf="row.completo_datos === 'Faltan Datos'">
               Faltan Datos
             </ng-container>
           </ng-template>

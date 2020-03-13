@@ -17,20 +17,22 @@
 /*
 * Dev
 */
-export const BASE_URL_REST = 'http://desagestorquejas.diaco.gob.gt/quejas_dev/rs/';
-export const BASE_VERIFICACION_DATOS_LINK = 'http://desagestorquejas.diaco.gob.gt/quejas_ini_6/#/consumidor/interno/';
-export const BASE_PRESENCIAL_LINK = 'http://desagestorquejas.diaco.gob.gt/quejas_ini_6/#/pquejaini/presencial/';
-export const BASE_CALLCENTER_LINK = 'http://desagestorquejas.diaco.gob.gt/quejas_ini_6/#/pquejaini/callcenter/';
+// export const BASE_URL_REST = 'http://desagestorquejas.diaco.gob.gt/quejas_dev/rs/';
+// export const BASE_VERIFICACION_DATOS_LINK = 'http://desagestorquejas.diaco.gob.gt/quejas_ini_6/#/consumidor/interno/';
+// export const BASE_PRESENCIAL_LINK = 'http://desagestorquejas.diaco.gob.gt/quejas_ini_6/#/pquejaini/presencial/';
+// export const BASE_CALLCENTER_LINK = 'http://desagestorquejas.diaco.gob.gt/quejas_ini_6/#/pquejaini/callcenter/';
 
 /********************************************************/
 
 /*
 * Production
-*/
-// export const BASE_URL_REST = 'http://gestorquejas.diaco.gob.gt/diaco-int-web/rs/';
-// export const BASE_PRESENCIAL_LINK = 'http://gestorquejas.diaco.gob.gt/dist6/#/pquejaini/presencial/';
-// export const BASE_VERIFICACION_DATOS_LINK='http://gestorquejas.diaco.gob.gt/dist6/#/consumidor/interno/';
-// export const BASE_CALLCENTER_LINK = 'http://desagestorquejas.diaco.gob.gt/dist6/#/pquejaini/callcenter/';
+
+ */
+export const BASE_URL_REST = 'http://gestorquejas.diaco.gob.gt/quejas_dev/rs/';
+export const BASE_VERIFICACION_DATOS_LINK = 'http://gestorquejas.diaco.gob.gt/quejas_ini_6/#/consumidor/interno/';
+export const BASE_PRESENCIAL_LINK = 'http://gestorquejas.diaco.gob.gt/quejas_ini_6/#/pquejaini/presencial/';
+export const BASE_CALLCENTER_LINK = 'http://gestorquejas.diaco.gob.gt/quejas_ini_6/#/pquejaini/callcenter/';
+
 
 /*********************************************************/
 

@@ -23,6 +23,7 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
 import {timer} from 'rxjs';
 import {SubmitFormService} from '../shared/submit-form.service';
 import {SeguridadService} from '../shared/seguridad.service';
+import {tryCatch} from 'rxjs/internal-compatibility';
 
 declare function myclick(thisobject): any;
 
@@ -541,33 +542,23 @@ export class TablaMainAtConComponent implements OnInit {
 
   // filters results
   filterDatatable(event) {
-    // get the value of the key pressed and make it lowercase
     let val = event.target.value.toLowerCase();
-    // get the amount of columns in the table
-    //let colsAmt = this.columns.length;
-    console.log(this.data[0]);
-    // get the key names of each column in the dataset
     let keys = Object.keys(this.data[0]);
     let colsAmt = keys.length;
-    //let validkeys = [1,3,4,9,12];
-    let validkeys = [0, 1, 3, 4, 7, 10, 12];
-    console.log(val, colsAmt, keys);
-    // assign filtered matches to the active datatable
+    let validkeys = [9, 14, 3, 4, 12, 15];
     this.rows = this.filteredData.filter(function (item) {
-      // iterate through each row's column data
-      for (let i = 0; i < colsAmt; i++) {
-        if (validkeys.indexOf(i) != -1) {
-          // check for a match
-          if (item[keys[i]].toString().toLowerCase().indexOf(val) !== -1 || !val) {
-            // found match, return true to add to result set
-            return true;
+      for (let i = 0; i < colsAmt ; i++) {
+        if (validkeys.indexOf(i) !== -1) {
+          try {
+            if (item[keys[i]].toString().toLowerCase().indexOf(val) !== -1 || !val) {
+              return true;
+            }
+          }catch (e) {
+            console.log('sin data');
           }
         }
       }
     });
-    console.log(this.rows);
-    // whenever the filter changes, always go back to the first page
-    //this.table.offset = 0;
   }
 
   onSelect({selected}) {

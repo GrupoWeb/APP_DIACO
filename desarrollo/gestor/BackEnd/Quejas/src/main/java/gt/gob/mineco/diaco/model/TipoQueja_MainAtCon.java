@@ -283,9 +283,9 @@ public class TipoQueja_MainAtCon implements Serializable {
         }
         
         if(this.completo_datos != null){
-            queja.addProperty("completo_datos", this.completo_datos);
+            queja.addProperty("completo_datos", "Datos Completos");
         }else{
-            queja.addProperty("completo_datos","");
+            queja.addProperty("completo_datos","Faltan Datos");
         }
         
         if(tipoflujoguia != null){

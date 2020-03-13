@@ -92,6 +92,7 @@ public class Constants {
         public static final int REG_DIACO_PERFIL_USUARIO_GENERALES_APROBACION_PP=26;
         public static final int REG_DIACO_PERFIL_USUARIO_GENERALES_CATALOGOS=27;
         public static final int REG_DIACO_PERFIL_USUARIO_ATCON_PRESENCIAL=28;
+        public static final int REG_DIACO_PERFIL_USUARIO_ATCON_CALL_CENTER=30;
         public static final int REG_DIACO_PERFIL_USUARIO_PP_NORMAL=4;
         public static final int REG_DIACO_PERFIL_USUARIO_PP_ADMINISTRADOR=5;
 
